@@ -1,7 +1,9 @@
 # Hey Emacs, this is a -*- makefile -*-
 #----------------------------------------------------------------------------
-# WinAVR Makefile Template written by Eric B. Weddington, Jörg Wunsch, et al.
+# WinAVR Makefile Template written by Eric B. Weddington, Jï¿½rg Wunsch, et al.
 #  >> Modified for use with the LUFA project. <<
+#
+# please edit the port information at line 371
 #
 # Released to the Public Domain
 #
@@ -18,7 +20,7 @@
 # Opendous Inc.
 # Denver Gingerich
 # Chris Lockfort
-#
+# Anqi Chen
 #----------------------------------------------------------------------------
 # On command line:
 #
@@ -70,7 +72,7 @@ MCU = atmega32u4        # Teensy 2.0
 # Target board (see library "Board Types" documentation, NONE for projects not requiring
 # LUFA board drivers). If USER is selected, put custom board drivers in a directory called 
 # "Board" inside the application directory.
-BOARD  = TEENSY
+BOARD  = MICROTOUCH
 
 # Processor frequency.
 #     This will define a symbol, F_CPU, in all source code files equal to the 
@@ -363,10 +365,10 @@ LDFLAGS += $(PRINTF_LIB) $(SCANF_LIB) $(MATH_LIB)
 # Type: avrdude -c ?
 # to get a full listing.
 #
-AVRDUDE_PROGRAMMER = jtagmkII
+AVRDUDE_PROGRAMMER = avr109
 
 # com1 = serial port. Use lpt1 to connect to parallel port.
-AVRDUDE_PORT = usb
+AVRDUDE_PORT = 
 
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
